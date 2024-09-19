@@ -9,8 +9,6 @@ Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
         'appName' => config('app.name'),
     ]);
 });
@@ -20,11 +18,17 @@ Route::prefix('blog')->group(function () {
         return Inertia::render('Blog/Blog', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
             'appName' => config('app.name'),
         ]);
     })->name('blog.index');
+    Route::get('/{slug}', function ($slug) {
+        return Inertia::render('Blog/BlogPost/Post', [
+            'slug' => $slug,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'appName' => config('app.name'),
+        ]);
+    })->name('blog.post');
 });
 
 Route::prefix('beverages')->group(function () {
@@ -32,8 +36,6 @@ Route::prefix('beverages')->group(function () {
         return Inertia::render('Beverages/Beverages', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
             'appName' => config('app.name'),
         ]);
     })->name('beverages.index');
@@ -44,8 +46,6 @@ Route::prefix('venues')->group(function () {
         return Inertia::render('Venues/Venues', [
             'canLogin' => Route::has('login'),
             'canRegister' => Route::has('register'),
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
             'appName' => config('app.name'),
         ]);
     })->name('venues.index');
