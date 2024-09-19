@@ -11,24 +11,43 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'appName' => config('app.name'),
     ]);
 });
 
 Route::prefix('blog')->group(function () {
     Route::get('/', function () {
-        return Inertia::render('Blog/Blog');
+        return Inertia::render('Blog/Blog', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+            'appName' => config('app.name'),
+        ]);
     })->name('blog.index');
 });
 
 Route::prefix('beverages')->group(function () {
     Route::get('/', function () {
-        return Inertia::render('Beverages/Beverages');
+        return Inertia::render('Beverages/Beverages', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+            'appName' => config('app.name'),
+        ]);
     })->name('beverages.index');
 });
 
 Route::prefix('venues')->group(function () {
     Route::get('/', function () {
-        return Inertia::render('Venues/Venues');
+        return Inertia::render('Venues/Venues', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'laravelVersion' => Application::VERSION,
+            'phpVersion' => PHP_VERSION,
+            'appName' => config('app.name'),
+        ]);
     })->name('venues.index');
 });
 
