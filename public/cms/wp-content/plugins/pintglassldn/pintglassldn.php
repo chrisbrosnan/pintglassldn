@@ -29,6 +29,7 @@ function add_custom_post_types(){
                 'title', 'editor', 'thumbnail'
             ],
             'show_ui' => true,
+            'show_in_graphql' => true,
         )
     );
     register_post_type('beverage',
@@ -46,6 +47,7 @@ function add_custom_post_types(){
                 'title', 'editor', 'thumbnail'
             ],
             'show_ui' => true,
+            'show_in_graphql' => true,
         )
     );
 }
