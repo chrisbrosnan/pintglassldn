@@ -40,7 +40,7 @@ function add_custom_post_types(){
             'public' => true,
             'has_archive' => true,
             'rewrite' => [
-                'slug' => 'venues'
+                'slug' => 'beverages'
             ],
             'supports' => [
                 'title', 'editor', 'thumbnail'
