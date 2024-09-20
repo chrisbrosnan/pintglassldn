@@ -50,6 +50,7 @@ function add_custom_taxonomies(){
                 'title', 'editor', 'thumbnail'
             ],
             'hierarchical' => true,
+            'show_ui' => true,
         )
     );
     register_taxonomy('type', 'beverage',
@@ -62,6 +63,7 @@ function add_custom_taxonomies(){
                 'title', 'editor', 'thumbnail'
             ],
             'hierarchical' => true,
+            'show_ui' => true,
         )
     );
 }
