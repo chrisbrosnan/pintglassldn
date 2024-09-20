@@ -38,7 +38,6 @@ export default function Welcome({ auth, appName }: PageProps<{ appName: string }
                             <RecentVenueReviews />
                             <hr className="mt-8 mb-4"/>
                             <TrendingVenueReviews />
-                            <hr className="mt-8 mb-4"/>
 
                         </main>
 

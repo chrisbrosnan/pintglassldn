@@ -13,6 +13,7 @@ Route::get('/', function () {
     ]);
 });
 
+// BLOG ROUTES
 Route::prefix('blog')->group(function () {
     Route::get('/', function () {
         return Inertia::render('Blog/Blog', [
@@ -31,6 +32,7 @@ Route::prefix('blog')->group(function () {
     })->name('blog.post');
 });
 
+// BEVERAGES ROUTES
 Route::prefix('beverages')->group(function () {
     Route::get('/', function () {
         return Inertia::render('Beverages/Beverages', [
@@ -39,8 +41,26 @@ Route::prefix('beverages')->group(function () {
             'appName' => config('app.name'),
         ]);
     })->name('beverages.index');
+    Route::get('/{type}', function ($type) {
+        return Inertia::render('Beverages/Types/Types', [
+            'type' => $type,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'appName' => config('app.name'),
+        ]);
+    })->name('beverages.type');
+    Route::get('/{type}/{slug}', function ($type, $slug) {
+        return Inertia::render('Beverages/Types/Beverages/Beverage', [
+            'type' => $type,
+            'slug' => $slug,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'appName' => config('app.name'),
+        ]);
+    })->name('beverages.singular');
 });
 
+// VENUES ROUTES
 Route::prefix('venues')->group(function () {
     Route::get('/', function () {
         return Inertia::render('Venues/Venues', [
@@ -49,6 +69,30 @@ Route::prefix('venues')->group(function () {
             'appName' => config('app.name'),
         ]);
     })->name('venues.index');
+    Route::get('/locations', function () {
+        return Inertia::render('Venues/Locations/Locations', [
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'appName' => config('app.name'),
+        ]);
+    })->name('venues.locations');
+    Route::get('/locations/{location}', function ($location) {
+        return Inertia::render('Venues/Locations/Location/Location', [
+            'location' => $location,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'appName' => config('app.name'),
+        ]);
+    })->name('venues.location');
+    Route::get('/locations/{location}/{slug}', function ($location, $slug) {
+        return Inertia::render('Venues/Locations/Location/Venue/Venue', [
+            'slug' => $slug,
+            'location' => $location,
+            'canLogin' => Route::has('login'),
+            'canRegister' => Route::has('register'),
+            'appName' => config('app.name'),
+        ]);
+    })->name('venues.singular');
 });
 
 Route::get('/dashboard', function () {

@@ -11,7 +11,7 @@ export default function BlogTrendingPosts() {
                     </div>
                     <h2 className="font-black pb-3">Recent Post</h2>
                     <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-blue-200 text-white font-bold p-2 text-xs rounded">Read More</button>
+                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
                 </a>
                 <a href={route('blog.index')} >
                     <div className="flex items-center justify-between pb-3">
@@ -19,7 +19,7 @@ export default function BlogTrendingPosts() {
                     </div>
                     <h2 className="font-black pb-3">Recent Post</h2>
                     <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-blue-200 text-white font-bold p-2 text-xs rounded">Read More</button>
+                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
                 </a>
                 <a href={route('blog.index')} >
                     <div className="flex items-center justify-between pb-3">
@@ -27,7 +27,7 @@ export default function BlogTrendingPosts() {
                     </div>
                     <h2 className="font-black pb-3">Recent Post</h2>
                     <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-blue-200 text-white font-bold p-2 text-xs rounded">Read More</button>
+                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
                 </a>
                 <a href={route('blog.index')} >
                     <div className="flex items-center justify-between pb-3">
@@ -35,7 +35,7 @@ export default function BlogTrendingPosts() {
                     </div>
                     <h2 className="font-black pb-3">Recent Post</h2>
                     <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-blue-200 text-white font-bold p-2 text-xs rounded">Read More</button>
+                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
                 </a>
             </div>
         </div>
