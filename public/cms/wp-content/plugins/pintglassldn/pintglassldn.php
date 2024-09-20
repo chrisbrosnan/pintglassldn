@@ -16,13 +16,19 @@ add_action('init', 'add_custom_post_types');
 function add_custom_post_types(){
     register_post_type('venue',
         array(
-            'labels' => array(
+            'labels' => [
                 'name' => __('Venues'),
                 'singular_name' => __('Venue')
-            ),
+            ],
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'venues'),
+            'rewrite' => [
+                'slug' => 'venues'
+            ],
+            'supports' => [
+                'title', 'editor', 'thumbnail'
+            ],
+            'show_ui' => true,
         )
     );
     register_post_type('beverage',
@@ -33,7 +39,13 @@ function add_custom_post_types(){
             ),
             'public' => true,
             'has_archive' => true,
-            'rewrite' => array('slug' => 'beverages'),
+            'rewrite' => [
+                'slug' => 'venues'
+            ],
+            'supports' => [
+                'title', 'editor', 'thumbnail'
+            ],
+            'show_ui' => true,
         )
     );
 }
@@ -46,11 +58,7 @@ function add_custom_taxonomies(){
                 'name'          => __('Locations'),
                 'singular_name' => __('Location')
             ],
-            'supports' => [
-                'title', 'editor', 'thumbnail'
-            ],
             'hierarchical' => true,
-            'show_ui' => true,
         )
     );
     register_taxonomy('type', 'beverage',
@@ -59,11 +67,7 @@ function add_custom_taxonomies(){
                 'name'          => __('Types'),
                 'singular_name' => __('Type')
             ],
-            'supports' => [
-                'title', 'editor', 'thumbnail'
-            ],
             'hierarchical' => true,
-            'show_ui' => true,
         )
     );
 }
