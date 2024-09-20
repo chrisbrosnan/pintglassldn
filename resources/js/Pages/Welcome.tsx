@@ -1,4 +1,4 @@
-import { Link, Head } from '@inertiajs/react';
+import { Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
@@ -10,12 +10,12 @@ import RecentVenueReviews from '@/Components/RecentVenueReviews';
 import TrendingVenueReviews from '@/Components/TrendingVenueReviews';
 
 export default function Welcome({ auth, appName }: PageProps<{ appName: string }>) {
-    const handleImageError = () => {
-        document.getElementById('screenshot-container')?.classList.add('!hidden');
-        document.getElementById('docs-card')?.classList.add('!row-span-1');
-        document.getElementById('docs-card-content')?.classList.add('!flex-row');
-        document.getElementById('background')?.classList.add('!hidden');
-    };
+    // const handleImageError = () => {
+    //     document.getElementById('screenshot-container')?.classList.add('!hidden');
+    //     document.getElementById('docs-card')?.classList.add('!row-span-1');
+    //     document.getElementById('docs-card-content')?.classList.add('!flex-row');
+    //     document.getElementById('background')?.classList.add('!hidden');
+    // };
 
     return (
         <>
