@@ -42,19 +42,25 @@ add_action('init', 'add_custom_taxonomies');
 function add_custom_taxonomies(){
     register_taxonomy('location', 'venue',
         array(
-            'labels' => array(
+            'labels' => [
                 'name'          => __('Locations'),
                 'singular_name' => __('Location')
-            ),
+            ],
+            'supports' => [
+                'title', 'editor', 'thumbnail'
+            ],
             'hierarchical' => true,
         )
     );
     register_taxonomy('type', 'beverage',
         array(
-            'labels' => array(
+            'labels' => [
                 'name'          => __('Types'),
                 'singular_name' => __('Type')
-            ),
+            ],
+            'supports' => [
+                'title', 'editor', 'thumbnail'
+            ],
             'hierarchical' => true,
         )
     );
