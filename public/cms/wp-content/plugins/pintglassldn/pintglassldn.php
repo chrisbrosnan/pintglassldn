@@ -30,6 +30,7 @@ function add_custom_post_types(){
             ],
             'show_ui' => true,
             'show_in_graphql' => true,
+            'graphql_single_name' => 'venue',
         )
     );
     register_post_type('beverage',
@@ -48,6 +49,7 @@ function add_custom_post_types(){
             ],
             'show_ui' => true,
             'show_in_graphql' => true,
+            'graphql_single_name' => 'beverage',
         )
     );
 }
