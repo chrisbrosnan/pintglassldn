@@ -1,4 +1,10 @@
 export default function RecentBeerReviews() {
+    // const fetch_beer_reviews = async () => {
+    //     const response = await fetch('https://pintglassldn.com/');
+    //     const data = await response.json();
+    //     console.log(data);
+    // }
+
     return (
         <div>
             <div className="grid gap-6 lg:grid-cols-4 lg:gap-8 lg:px-12 pb-4">
