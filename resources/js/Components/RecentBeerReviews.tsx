@@ -1,22 +1,24 @@
 export default function RecentBeerReviews() {
-    const wp_graph_ql_query = `allBeverage(where: {}) {
-        nodes {
-        content
-        slug
-        status
-        title
-        date
-        databaseId
-        featuredImage {
-                node {
-                sourceUrl
-                title
-                mediaItemUrl
-                caption
-                uri
+    const wp_graph_ql_query = `query AllBeverages {
+        allBeverage(where: {}) {
+            nodes {
+            content
+            slug
+            status
+            title
+            date
+            databaseId
+            featuredImage {
+                    node {
+                    sourceUrl
+                    title
+                    mediaItemUrl
+                    caption
+                    uri
+                    }
                 }
+            id
             }
-        id
         }
     }`;
 
