@@ -43,38 +43,21 @@ export default function RecentBeerReviews() {
                 <h2 className="font-black text-lg">Recent Beer Reviews</h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-4 lg:gap-8 lg:px-12">
-                <a href={route('blog.index')} >
-                    <div className="flex items-center justify-between pb-3">
-                        <img src="https://via.placeholder.com/800x400" alt="Screenshot of the application" className="w-full h-full object-cover rounded-lg shadow-lg" />
-                    </div>
-                    <h2 className="font-black pb-3">Recent Post</h2>
-                    <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
-                </a>
-                <a href={route('blog.index')} >
-                    <div className="flex items-center justify-between pb-3">
-                        <img src="https://via.placeholder.com/800x400" alt="Screenshot of the application" className="w-full h-full object-cover rounded-lg shadow-lg" />
-                    </div>
-                    <h2 className="font-black pb-3">Recent Post</h2>
-                    <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
-                </a>
-                <a href={route('blog.index')} >
-                    <div className="flex items-center justify-between pb-3">
-                        <img src="https://via.placeholder.com/800x400" alt="Screenshot of the application" className="w-full h-full object-cover rounded-lg shadow-lg" />
-                    </div>
-                    <h2 className="font-black pb-3">Recent Post</h2>
-                    <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
-                </a>
-                <a href={route('blog.index')} >
-                    <div className="flex items-center justify-between pb-3">
-                        <img src="https://via.placeholder.com/800x400" alt="Screenshot of the application" className="w-full h-full object-cover rounded-lg shadow-lg" />
-                    </div>
-                    <h2 className="font-black pb-3">Recent Post</h2>
-                    <p className="pb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua....</p>
-                    <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
-                </a>
+                {
+                    // @ts-ignore
+                    beverages.map((beverage) => {
+                        return (
+                            <div key={beverage.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                                <img src={beverage.featuredImage.node.sourceUrl} alt={beverage.featuredImage.node.title} className="w-full h-48 object-cover object-center" />
+                                <div className="p-6">
+                                    <h3 className="text-lg font-semibold text-gray-800">{beverage.title}</h3>
+                                    <p className="text-gray-600">{beverage.date}</p>
+                                    <p className="text-gray-600">{beverage.featuredImage.node.caption}</p>
+                                </div>
+                            </div>
+                        );
+                    })
+                }
             </div>
         </div>
     );
