@@ -21,7 +21,7 @@ export default function RecentBeerReviews() {
     }`;
 
     const fetch_beer_reviews = async () => {
-        const response = await fetch('https://pintglassldn.com/graphql', {
+        const response = await fetch('https://pintglassldn.com/cms/graphql', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
