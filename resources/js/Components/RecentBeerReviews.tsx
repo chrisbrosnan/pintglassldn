@@ -1,3 +1,18 @@
+import React, { useEffect, useState } from 'react';
+
+interface Beverage {
+    id: string;
+    title: string;
+    date: string;
+    featuredImage: {
+        node: {
+            sourceUrl: string;
+            title: string;
+            caption: string;
+        }
+    }
+}
+
 export default function RecentBeerReviews() {
     const wp_graph_ql_query = `query AllBeverages {
         allBeverage(where: {}) {
@@ -35,6 +50,13 @@ export default function RecentBeerReviews() {
         console.log(beverages);
         return beverages;
     }
+
+    const [beverages, setBeverages] = useState([]);
+    useEffect(() => {
+        fetch_beer_reviews().then((beverages) => {
+            setBeverages(beverages);
+        });
+    }, []);
 
     return (
         <div>
