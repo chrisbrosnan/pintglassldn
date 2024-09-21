@@ -1,9 +1,38 @@
 export default function RecentBeerReviews() {
-    // const fetch_beer_reviews = async () => {
-    //     const response = await fetch('https://pintglassldn.com/');
-    //     const data = await response.json();
-    //     console.log(data);
-    // }
+    const wp_graph_ql_query = `allBeverage(where: {}) {
+        nodes {
+        content
+        slug
+        status
+        title
+        date
+        databaseId
+        featuredImage {
+                node {
+                sourceUrl
+                title
+                mediaItemUrl
+                caption
+                uri
+                }
+            }
+        id
+        }
+    }`;
+
+    const fetch_beer_reviews = async () => {
+        const response = await fetch('https://pintglassldn.com/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query: wp_graph_ql_query }),
+        });
+        const data = await response.json();
+        console.log(data);
+    }
+
+    console.log(fetch_beer_reviews());
 
     return (
         <div>
