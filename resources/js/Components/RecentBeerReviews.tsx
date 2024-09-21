@@ -51,7 +51,7 @@ export default function RecentBeerReviews() {
         return beverages;
     }
 
-    const [beverages, setBeverages] = useState([]);
+    const [beverages, setBeverages] = useState<Beverage | null>(null);
     useEffect(() => {
         fetch_beer_reviews().then((beverages) => {
             setBeverages(beverages);
