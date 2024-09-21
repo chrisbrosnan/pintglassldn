@@ -30,8 +30,9 @@ export default function RecentBeerReviews() {
             },
             body: JSON.stringify({ query: wp_graph_ql_query }),
         });
-        const data = await response.json();
-        console.log(data);
+        const data      = await response.json();
+        const beverages = data.data.allBeverage.nodes;
+        console.log(beverages);
     }
 
     console.log(fetch_beer_reviews());
