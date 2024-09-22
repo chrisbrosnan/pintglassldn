@@ -47,7 +47,6 @@ export default function RecentBeerReviews() {
         });
         const data      = await response.json();
         const beverages = data.data.allBeverage.nodes;
-        console.log(beverages.length);
         return beverages;
     }
 
@@ -56,6 +55,7 @@ export default function RecentBeerReviews() {
     useEffect(() => {
         fetch_beer_reviews().then((beverages) => {
             setBeverages(beverages);
+            console.log(beverages);
         });
     }, []);
 
