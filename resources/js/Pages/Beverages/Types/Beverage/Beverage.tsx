@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { PageProps } from '@/types';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
-import parse from 'html-react-parser';
 
 interface Beverage {
     id: string;
@@ -117,7 +116,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                                         </tbody>
                                     </table>
                                     <div className="py-4">
-                                        <p>{ parse(beverage?.content) ?? '' }</p>
+                                        <p>{ beverage?.content }</p>
                                     </div>
                                 </div>
                             </div>
