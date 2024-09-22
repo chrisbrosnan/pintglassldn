@@ -1,21 +1,66 @@
 import { Link, Head } from '@inertiajs/react';
+import { useEffect, useState } from 'react';
 import { PageProps } from '@/types';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
-import BlogRecentPosts from '@/Components/BlogRecentPosts';
-import BlogTrendingPosts from '@/Components/BlogTrendingPosts';
-import RecentBeerReviews from '@/Components/RecentBeerReviews';
-import TrendingBeerReviews from '@/Components/TrendingBeerReviews';
-import RecentVenueReviews from '@/Components/RecentVenueReviews';
-import TrendingVenueReviews from '@/Components/TrendingVenueReviews';
+
+interface Beverage {
+    id: string;
+    title: string;
+    date: string;
+    featuredImage: {
+        node: {
+            sourceUrl: string;
+            title: string;
+            caption: string;
+        }
+    }
+}
 
 export default function Welcome({ auth, appName }: PageProps<{ appName: string }>) {
-    const handleImageError = () => {
-        document.getElementById('screenshot-container')?.classList.add('!hidden');
-        document.getElementById('docs-card')?.classList.add('!row-span-1');
-        document.getElementById('docs-card-content')?.classList.add('!flex-row');
-        document.getElementById('background')?.classList.add('!hidden');
-    };
+
+    const wp_graph_ql_query = `query Beverage {
+        beverage(id: "", idType: SLUG){
+            id,
+            content
+            slug
+            status
+            title
+            date
+            databaseId
+            featuredImage {
+                node {
+                    sourceUrl
+                    title
+                    mediaItemUrl
+                    caption
+                    uri
+                }
+            }
+        }
+    }`;
+
+    const fetch_beer_review = async () => {
+        const response = await fetch('https://pintglassldn.com/cms/graphql', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ query: wp_graph_ql_query }),
+        });
+        const data     = await response.json();
+        const beverage = data.data.Beverage;
+        console.log(beverage);
+        return beverage;
+    }
+
+    const [beverage, setBeverages] = useState<Beverage | null>(null);
+
+    useEffect(() => {
+        fetch_beer_review().then((beverage) => {
+            setBeverages(beverage);
+        });
+    }, []);
 
     return (
         <>
@@ -26,19 +71,6 @@ export default function Welcome({ auth, appName }: PageProps<{ appName: string }
                         <Header auth={auth} appName={appName} />
 
                         <main className="px-12 py-6">
-
-                            <BlogRecentPosts />
-                            <hr className="mt-8 mb-4"/>
-                            <BlogTrendingPosts />
-                            <hr className="mt-8 mb-4"/>
-                            <RecentBeerReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <TrendingBeerReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <RecentVenueReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <TrendingVenueReviews />
-                            <hr className="mt-8 mb-4"/>
 
                         </main>
 

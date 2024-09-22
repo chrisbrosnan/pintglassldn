@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from '@inertiajs/react';
 
 interface Beverage {
@@ -48,7 +48,6 @@ export default function RecentBeerReviews() {
         });
         const data      = await response.json();
         const beverages = data.data.allBeverage.nodes;
-        console.log(beverages);
         return beverages;
     }
 
