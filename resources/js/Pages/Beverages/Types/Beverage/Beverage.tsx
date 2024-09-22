@@ -84,10 +84,10 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                         <Header auth={auth} appName={appName} />
 
                         <main className="px-12 py-6">
-                            <h1 className="text-4xl font-bold text-center">{ beverage?.title }</h1>
+                            <h1 className="text-4xl font-bold text-center py-4">{ beverage?.title }</h1>
                             <div className="grid gap-5 lg:grid-cols-2 lg:gap-2 lg:px-12">
                                 <img src={ beverage?.featuredImage.node.sourceUrl } alt={ beverage?.featuredImage.node.title } className="w-full h-full object-cover rounded-lg shadow-lg" />
-                                <div>
+                                <div className="px-4">
                                     <p><strong>ABV:</strong> { beverage?.beverageFields.abv }</p>
                                     <p><strong>Brewery:</strong> { beverage?.beverageFields.brewery }</p>
                                     <p><strong>First Brewed:</strong> { beverage?.beverageFields.firstBrewed }</p>
