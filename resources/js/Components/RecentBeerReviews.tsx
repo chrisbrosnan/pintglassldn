@@ -47,7 +47,7 @@ export default function RecentBeerReviews() {
         });
         const data      = await response.json();
         const beverages = data.data.allBeverage.nodes;
-        // console.log(beverages);
+        console.log(beverages);
         return beverages;
     }
 
@@ -65,7 +65,7 @@ export default function RecentBeerReviews() {
                 <h2 className="font-black text-lg">Recent Beer Reviews</h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-4 lg:gap-8 lg:px-12">
-                {
+                {/* {
                     // @ts-ignore
                     beverages.map((beverage) => {
                         return (
@@ -79,7 +79,7 @@ export default function RecentBeerReviews() {
                             </div>
                         );
                     })
-                }
+                } */}
             </div>
         </div>
     );
