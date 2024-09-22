@@ -95,23 +95,23 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                                         <tbody>
                                             <tr>
                                                 <td>ABV:</td>
-                                                <td>{ beverage?.beverageFields.abv }</td>
+                                                <td className="pl-4">{ beverage?.beverageFields.abv }</td>
                                             </tr>
                                             <tr>
                                                 <td>Brewery:</td>
-                                                <td>{ beverage?.beverageFields.brewery }</td>
+                                                <td className="pl-4">{ beverage?.beverageFields.brewery }</td>
                                             </tr>
                                             <tr>
                                                 <td>First Brewed:</td>
-                                                <td>{ beverage?.beverageFields.firstBrewed }</td>
+                                                <td className="pl-4">{ beverage?.beverageFields.firstBrewed }</td>
                                             </tr>
                                             <tr>
                                                 <td>Origin:</td>
-                                                <td>{ beverage?.beverageFields.origin }</td>
+                                                <td className="pl-4">{ beverage?.beverageFields.origin }</td>
                                             </tr>
                                             <tr>
                                                 <td>Rating:</td>
-                                                <td>{ beverage?.beverageFields.rating }</td>
+                                                <td className="pl-4">{ beverage?.beverageFields.rating }</td>
                                             </tr>
                                         </tbody>
                                     </table>
