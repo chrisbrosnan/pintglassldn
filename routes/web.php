@@ -50,7 +50,7 @@ Route::prefix('beverages')->group(function () {
         ]);
     })->name('beverages.type');
     Route::get('/{type}/{slug}', function ($type, $slug) {
-        return Inertia::render('Beverages/Types/Beverages/Beverage', [
+        return Inertia::render('Beverages/Types/Beverage/Beverage', [
             'type' => $type,
             'slug' => $slug,
             'canLogin' => Route::has('login'),
