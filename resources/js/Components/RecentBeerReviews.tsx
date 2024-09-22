@@ -47,7 +47,7 @@ export default function RecentBeerReviews() {
         });
         const data      = await response.json();
         const beverages = data.data.allBeverage.nodes;
-        console.log(beverages);
+        // console.log(beverages);
         return beverages;
     }
 
