@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { PageProps } from '@/types';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
+import parse from 'html-react-parser';
 
 interface Beverage {
     id: string;
@@ -85,7 +86,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                         <Header auth={auth} appName={appName} />
 
                         <main className="px-12 pb-6">
-                            <h1 className="text-4xl font-bold text-left py-6">
+                            <h1 className="text-4xl font-bold text-left py-6 lg:px-12">
                                 { beverage?.title }
                             </h1>
                             <div className="grid gap-5 lg:grid-cols-2 lg:gap-2 lg:px-12">
@@ -116,7 +117,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                                         </tbody>
                                     </table>
                                     <div className="py-4">
-                                        <p>{ beverage?.content }</p>
+                                        <p>{ parse(beverage?.content) ?? '' }</p>
                                     </div>
                                 </div>
                             </div>
