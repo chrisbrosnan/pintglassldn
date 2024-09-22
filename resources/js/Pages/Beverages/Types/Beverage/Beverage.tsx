@@ -21,7 +21,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
 
     const wp_graph_ql_query = `query Beverage {
         beverage(id: "` + slug + `", idType: SLUG){
-            id,
+            id
             content
             slug
             status
@@ -36,6 +36,13 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                     caption
                     uri
                 }
+            }
+            beverageFields {
+                abv
+                brewery
+                firstBrewed
+                origin
+                rating
             }
         }
     }`;
