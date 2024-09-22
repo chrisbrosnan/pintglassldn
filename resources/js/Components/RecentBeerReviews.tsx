@@ -52,13 +52,13 @@ export default function RecentBeerReviews() {
 
     const [beverages, setBeverages] = useState<Beverage | null>(null);
 
-    console.log(beverages);
-
     useEffect(() => {
         fetch_beer_reviews().then((beverages) => {
             setBeverages(beverages);
         });
     }, []);
+
+    const beverages_array = beverages ? beverages : [];
 
     return (
         <div>
@@ -66,11 +66,11 @@ export default function RecentBeerReviews() {
                 <h2 className="font-black text-lg">Recent Beer Reviews</h2>
             </div>
             <div className="grid gap-6 lg:grid-cols-4 lg:gap-8 lg:px-12">
-                {/* {
+                {
                     // @ts-ignore
-                    beverages.map((beverage) => {
+                    beverages_array.map((beverage, index) => {
                         return (
-                            <div key={beverage.id} className="bg-white rounded-lg shadow-lg overflow-hidden">
+                            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                                 <img src={beverage.featuredImage.node.sourceUrl} alt={beverage.featuredImage.node.title} className="w-full h-48 object-cover object-center" />
                                 <div className="p-6">
                                     <h3 className="text-lg font-semibold text-gray-800">{beverage.title}</h3>
@@ -80,7 +80,7 @@ export default function RecentBeerReviews() {
                             </div>
                         );
                     })
-                } */}
+                }
             </div>
         </div>
     );
