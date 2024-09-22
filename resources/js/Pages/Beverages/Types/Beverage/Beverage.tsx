@@ -49,10 +49,8 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
             body: JSON.stringify({ query: wp_graph_ql_query }),
         });
         const data     = await response.json();
-        // const beverage = data.data.Beverage;
-        console.log(data);
-        return data;
-        // return beverage;
+        const beverage = data.data.beverage;
+        return beverage;
     }
 
     const [beverage, setBeverages] = useState<Beverage | null>(null);
@@ -72,7 +70,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                         <Header auth={auth} appName={appName} />
 
                         <main className="px-12 py-6">
-
+                            <h1 className="text-4xl font-bold text-center">{ beverage?.title }</h1>
                         </main>
 
                         <Footer appName={appName} auth={auth} />
