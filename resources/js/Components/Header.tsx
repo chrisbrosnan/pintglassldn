@@ -25,7 +25,9 @@ export default function Header({ auth, appName }: PageProps<{ appName: string }>
                 </Link>
             </nav>
             <div className="flex lg:justify-center lg:col-start-2">
-                <h1 className="text-white font-black">{appName}</h1>
+                <Link href={route('welcome')} className="text-white font-black">
+                    <h1 className="text-white font-black">{appName}</h1>
+                </Link>
             </div>
             <nav className="-mx-3 flex flex-1 justify-end">
                 {/* {auth.user ? (
