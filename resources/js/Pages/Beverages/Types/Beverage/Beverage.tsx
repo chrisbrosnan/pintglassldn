@@ -77,6 +77,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
         });
         const data     = await response.json();
         const beverage = data.data.beverage;
+        console.log(beverage);
         return beverage;
     }
 
