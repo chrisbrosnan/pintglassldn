@@ -8,6 +8,7 @@ interface Beverage {
     id: string;
     title: string;
     date: string;
+    content: string;
     featuredImage: {
         node: {
             sourceUrl: string;
@@ -86,7 +87,6 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                         <main className="px-12 pb-6">
                             <h1 className="text-4xl font-bold text-left py-6">
                                 { beverage?.title }
-                                <img className="float-right" src="https://flagsapi.com/DE/shiny/64.png" />
                             </h1>
                             <div className="grid gap-5 lg:grid-cols-2 lg:gap-2 lg:px-12">
                                 <img src={ beverage?.featuredImage.node.sourceUrl } alt={ beverage?.featuredImage.node.title } className="w-full h-full object-cover rounded-lg shadow-lg" />
@@ -115,6 +115,9 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                                             </tr>
                                         </tbody>
                                     </table>
+                                    <div className="py-4">
+                                        <p>{ beverage?.content }</p>
+                                    </div>
                                 </div>
                             </div>
                         </main>
