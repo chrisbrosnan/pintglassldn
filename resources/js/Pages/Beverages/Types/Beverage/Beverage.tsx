@@ -20,7 +20,7 @@ interface Beverage {
 export default function Beverage({ auth, appName, slug }: PageProps<{ appName: string, slug: string }>) {
 
     const wp_graph_ql_query = `query Beverage {
-        beverage(id: ` + slug + `, idType: SLUG){
+        beverage(id: "` + slug + `", idType: SLUG){
             id,
             content
             slug
