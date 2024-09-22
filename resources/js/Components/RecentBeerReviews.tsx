@@ -15,8 +15,8 @@ interface Beverage {
 }
 
 export default function RecentBeerReviews() {
-    const wp_graph_ql_query = `query AllBeverages {
-        allBeverage(where: {}) {
+    const wp_graph_ql_query = `query RecentBeverages {
+        allBeverage(first: 5) {
             nodes {
             content
             slug
@@ -63,7 +63,7 @@ export default function RecentBeerReviews() {
 
     return (
         <div>
-            <div className="grid gap-6 lg:grid-cols-4 lg:gap-8 lg:px-12 pb-4">
+            <div className="lg:px-12 pb-4">
                 <h2 className="font-black text-lg">Recent Beer Reviews</h2>
             </div>
             <div className="grid gap-5 lg:grid-cols-5 lg:gap-8 lg:px-12">

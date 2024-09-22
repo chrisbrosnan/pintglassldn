@@ -21,7 +21,7 @@ interface Beverage {
         brewery: string;
         firstBrewed: string;
         origin: string;
-        rating: string;
+        rating: number;
     }
 }
 
@@ -95,7 +95,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                                         <tbody>
                                             <tr>
                                                 <td>ABV:</td>
-                                                <td className="pl-4">{ beverage?.beverageFields.abv }</td>
+                                                <td className="pl-4">{ beverage?.beverageFields.abv }%</td>
                                             </tr>
                                             <tr>
                                                 <td>Brewery:</td>
