@@ -67,7 +67,7 @@ export default function RecentBeerReviews() {
             <div className="grid gap-6 lg:grid-cols-4 lg:gap-8 lg:px-12 pb-4">
                 <h2 className="font-black text-lg">Recent Beer Reviews</h2>
             </div>
-            <div className="grid gap-6 lg:grid-cols-4 lg:gap-8 lg:px-12">
+            <div className="grid gap-6 lg:grid-cols-6 lg:gap-8 lg:px-12">
                 {
                     // @ts-ignore
                     beverages_array.map((beverage, index) => {
