@@ -11,7 +11,7 @@ Route::get('/', function () {
         'canRegister' => Route::has('register'),
         'appName' => config('app.name'),
     ]);
-});
+})->name('welcome');
 
 // BLOG ROUTES
 Route::prefix('blog')->group(function () {
