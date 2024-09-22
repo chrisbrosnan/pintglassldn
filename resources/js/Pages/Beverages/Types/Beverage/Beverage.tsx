@@ -49,9 +49,10 @@ export default function Welcome({ auth, appName }: PageProps<{ appName: string }
             body: JSON.stringify({ query: wp_graph_ql_query }),
         });
         const data     = await response.json();
-        const beverage = data.data.Beverage;
-        console.log(beverage);
-        return beverage;
+        // const beverage = data.data.Beverage;
+        console.log(data);
+        return data;
+        // return beverage;
     }
 
     const [beverage, setBeverages] = useState<Beverage | null>(null);
