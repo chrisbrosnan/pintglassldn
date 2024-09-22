@@ -115,9 +115,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <div className="py-4">
-                                        <p>{ beverage?.content }</p>
-                                    </div>
+                                    <div className="py-4" dangerouslySetInnerHTML={{ __html: beverage?.content ?? '' }} />
                                 </div>
                             </div>
                         </main>
