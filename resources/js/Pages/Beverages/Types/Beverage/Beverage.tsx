@@ -1,6 +1,7 @@
 import { Link, Head } from '@inertiajs/react';
 import { useEffect, useState } from 'react';
 import { PageProps } from '@/types';
+import _ from 'lodash';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 
@@ -31,7 +32,7 @@ interface Beverage {
     }
 }
 
-export default function Beverage({ auth, appName, slug }: PageProps<{ appName: string, slug: string }>) {
+export default function Beverage({ auth, appName, slug, type }: PageProps<{ appName: string, slug: string, type: string }>) {
 
     const wp_graph_ql_query = `query Beverage {
         beverage(id: "` + slug + `", idType: SLUG){
@@ -77,7 +78,6 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
         });
         const data     = await response.json();
         const beverage = data.data.beverage;
-        console.log(beverage);
         return beverage;
     }
 
@@ -108,7 +108,7 @@ export default function Beverage({ auth, appName, slug }: PageProps<{ appName: s
                                         <tbody>
                                             <tr>
                                                 <td>Type:</td>
-                                                <td className="pl-4">{ beverage?.beverageFields.type.nodes.name }</td>
+                                                <td className="pl-4">{ _.capitalize(type) }</td>
                                             </tr>
                                             <tr>
                                                 <td>ABV:</td>
