@@ -17,10 +17,10 @@ interface Beverage {
     }
 }
 
-export default function Welcome({ auth, appName }: PageProps<{ appName: string }>) {
+export default function Beverage({ auth, appName, slug }: PageProps<{ appName: string, slug: string }>) {
 
     const wp_graph_ql_query = `query Beverage {
-        beverage(id: "", idType: SLUG){
+        beverage(id: ` + slug + `, idType: SLUG){
             id,
             content
             slug
