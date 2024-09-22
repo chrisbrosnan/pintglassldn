@@ -78,8 +78,10 @@ export default function RecentBeerReviews() {
                                 </Link>
                                 <div className="p-6">
                                     <h3 className="text-lg font-semibold text-gray-800">{beverage.title}</h3>
-                                    <p className="text-gray-600">{beverage.date}</p>
-                                    <p className="text-gray-600">{beverage.featuredImage.node.caption}</p>
+                                    <p className="text-gray-600">{beverage.substring(0,100)}</p>
+                                    <Link href={route('beverages.singular', { type: 'lager', slug: beverage.slug })}>
+                                        <button className="bg-gray-400 hover:bg-amber-200 hover:text-amber-900 text-white font-bold p-2 text-xs rounded">Read More</button>
+                                    </Link>
                                 </div>
                             </div>
                         );
