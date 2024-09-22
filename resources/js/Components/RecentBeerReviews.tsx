@@ -74,7 +74,7 @@ export default function RecentBeerReviews() {
                         return (
                             <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
                                 <Link  href={route('beverages.singular', { type: 'lager', slug: beverage.slug })}>
-                                    <img src={beverage.featuredImage.node.sourceUrl} alt={beverage.featuredImage.node.title} className="w-full h-48 object-cover object-center" />
+                                    <img src={beverage.featuredImage.node.sourceUrl} alt={beverage.featuredImage.node.title} className="w-full object-cover object-center" />
                                 </Link>
                                 <div className="p-6">
                                     <h3 className="text-lg font-semibold text-gray-800">{beverage.title}</h3>
