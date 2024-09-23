@@ -81,13 +81,26 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
         return beverage;
     }
 
-    const [beverage, setBeverages] = useState<Beverage | null>(null);
+    const [beverage, setBeverage] = useState<Beverage | null>(null);
 
     useEffect(() => {
         fetch_beer_review().then((beverage) => {
-            setBeverages(beverage);
+            setBeverage(beverage);
         });
     }, []);
+
+    let rating;
+    if(beverage?.beverageFields.rating === 1) {
+        rating = <span className="text-red-500">★☆☆☆☆</span>;
+    } else if(beverage?.beverageFields.rating === 2) {
+        rating = <span className="text-red-500">★★☆☆☆</span>;
+    } else if(beverage?.beverageFields.rating === 3) {
+        rating = <span className="text-red-500">★★★☆☆</span>;
+    } else if(beverage?.beverageFields.rating === 4) {
+        rating = <span className="text-red-500">★★★★☆</span>;
+    } else if(beverage?.beverageFields.rating === 5) {
+        rating = <span className="text-red-500">★★★★★</span>;
+    }
 
     return (
         <>
@@ -128,7 +141,7 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
                                             </tr>
                                             <tr>
                                                 <td>Rating:</td>
-                                                <td className="pl-4">{ beverage?.beverageFields.rating }</td>
+                                                <td className="pl-4">{ rating }</td>
                                             </tr>
                                         </tbody>
                                     </table>
