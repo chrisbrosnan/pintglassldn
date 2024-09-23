@@ -110,8 +110,8 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
                     <div className="relative w-full">
                         <Header auth={auth} appName={appName} />
 
-                        <main className="px-12 pb-12 sm:w-3/4 xs:w-full mx-auto lg:w-3/4 lg:mx-auto">
-                            <h1 className="text-4xl font-bold text-left py-6 lg:px-12">
+                        <main className="px-12 pb-12 sm:w-3/4 xs:w-full mx-auto">
+                            <h1 className="text-4xl font-bold text-left py-6 lg:px-12 lg:w-3/4 lg:mx-auto">
                                 { beverage?.title }
                             </h1>
                             <div className="grid gap-5 lg:grid-cols-2 lg:gap-2 lg:px-12 pb-12 xs:text-md sm:text-lg lg:w-3/4 lg:mx-auto">
