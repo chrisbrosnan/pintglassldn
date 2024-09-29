@@ -2,12 +2,7 @@ import { Link, Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
-import BlogRecentPosts from '@/Components/BlogRecentPosts';
-import BlogTrendingPosts from '@/Components/BlogTrendingPosts';
-import RecentBeerReviews from '@/Components/RecentBeerReviews';
-import TrendingBeerReviews from '@/Components/TrendingBeerReviews';
-import RecentVenueReviews from '@/Components/RecentVenueReviews';
-import TrendingVenueReviews from '@/Components/TrendingVenueReviews';
+import AllBeerReviews from '@/Components/AllBeerReviews';
 
 export default function Welcome({ auth, appName }: PageProps<{ appName: string }>) {
     const handleImageError = () => {
@@ -27,18 +22,7 @@ export default function Welcome({ auth, appName }: PageProps<{ appName: string }
 
                         <main className="px-12 py-6">
 
-                            <BlogRecentPosts />
-                            <hr className="mt-8 mb-4"/>
-                            <BlogTrendingPosts />
-                            <hr className="mt-8 mb-4"/>
-                            <RecentBeerReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <TrendingBeerReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <RecentVenueReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <TrendingVenueReviews />
-                            <hr className="mt-8 mb-4"/>
+                            <AllBeerReviews />
 
                         </main>
 
