@@ -25,6 +25,9 @@ export default function TrendingBeerReviews() {
                 date
                 databaseId
                 id
+                beverageFields {
+                    flagCode
+                }
                 featuredImage {
                     node {
                         sourceUrl

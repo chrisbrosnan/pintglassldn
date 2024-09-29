@@ -58,6 +58,7 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
                 firstBrewed
                 origin
                 rating
+                flagCode
                 type {
                     nodes {
                         name
