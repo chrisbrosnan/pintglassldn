@@ -106,7 +106,7 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
 
     let flagImg
     if(beverage?.beverageFields.flagCode) {
-        flagImg = '<img src=""https://flagsapi.com/' + beverage?.beverageFields.flagCode + '/shiny/64.png" alt="' + beverage?.beverageFields.origin + '" class="w-4 h-4 inline-block" />';
+        flagImg = 'https://flagsapi.com/' + beverage?.beverageFields.flagCode + '/shiny/64.png';
     }
 
     return (
