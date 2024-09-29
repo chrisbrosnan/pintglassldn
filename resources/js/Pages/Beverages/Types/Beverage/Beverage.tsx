@@ -23,6 +23,7 @@ interface Beverage {
         firstBrewed: string;
         origin: string;
         rating: number;
+        flagCode: string;
         type: {
             nodes: {
                 name: string;
@@ -103,6 +104,11 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
         rating = <span className="text-red-500">★★★★★</span>;
     }
 
+    let flagImg
+    if(beverage?.beverageFields.flagCode) {
+        flagImg = '<img src=""https://flagsapi.com/' + beverage?.beverageFields.flagCode + '/shiny/64.png" alt="' + beverage?.beverageFields.origin + '" class="w-4 h-4 inline-block" />';
+    }
+
     return (
         <>
             <Head title="Welcome" />
@@ -138,7 +144,9 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
                                             </tr>
                                             <tr>
                                                 <td>Origin:</td>
-                                                <td className="pl-4">{ beverage?.beverageFields.origin }</td>
+                                                <td className="pl-4">{ beverage?.beverageFields.origin }
+                                                    <img src={ flagImg } alt={ beverage?.beverageFields.origin } className="w-4 h-4 inline-block" />
+                                                </td>
                                             </tr>
                                             <tr>
                                                 <td>Rating:</td>
