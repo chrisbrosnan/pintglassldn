@@ -90,7 +90,7 @@ export default function TrendingBeerReviews() {
                 {
                     // @ts-ignore
                     beverages_array.map((beverage, index) => {
-                        if(index < 6){
+                        if(index < 5){
                             let flagImg = 'https://flagsapi.com/' + beverage.beverageFields.flagCode + '/shiny/64.png';
                             return (
                                 <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
