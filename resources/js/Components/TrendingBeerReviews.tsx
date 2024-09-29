@@ -15,8 +15,8 @@ interface Beverage {
 }
 
 export default function TrendingBeerReviews() {
-    const wp_graph_ql_query = `query RecentBeverages {
-        allBeverage(first: 5) {
+    const wp_graph_ql_query = `query RandomBeverages($where: RootQueryToPostConnectionWhereArgs!) {
+        RandomBeverages(first: 5, where: $where) {
             nodes {
                 content
                 slug
