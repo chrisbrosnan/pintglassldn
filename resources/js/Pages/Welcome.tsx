@@ -20,17 +20,17 @@ export default function Welcome({ auth, appName }: PageProps<{ appName: string }
 
                         <main className="px-12 py-6">
 
-                            <BlogRecentPosts />
-                            <hr className="mt-8 mb-4"/>
-                            <BlogTrendingPosts />
-                            <hr className="mt-8 mb-4"/>
+                            {/* <BlogRecentPosts /> */}
+                            {/* <hr className="mt-8 mb-4"/> */}
+                            {/* <BlogTrendingPosts /> */}
+                            {/* <hr className="mt-8 mb-4"/> */}
                             <RecentBeerReviews />
                             <hr className="mt-8 mb-4"/>
                             <TrendingBeerReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <RecentVenueReviews />
-                            <hr className="mt-8 mb-4"/>
-                            <TrendingVenueReviews />
+                            {/* <hr className="mt-8 mb-4"/> */}
+                            {/* <RecentVenueReviews /> */}
+                            {/* <hr className="mt-8 mb-4"/>
+                            <TrendingVenueReviews /> */}
 
                         </main>
 
