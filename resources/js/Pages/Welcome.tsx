@@ -2,6 +2,7 @@ import { Head } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
+import ReactGA from 'react-ga';
 import BlogRecentPosts from '@/Components/BlogRecentPosts';
 import BlogTrendingPosts from '@/Components/BlogTrendingPosts';
 import RecentBeerReviews from '@/Components/RecentBeerReviews';
@@ -10,6 +11,10 @@ import RecentVenueReviews from '@/Components/RecentVenueReviews';
 import TrendingVenueReviews from '@/Components/TrendingVenueReviews';
 
 export default function Welcome({ auth, appName }: PageProps<{ appName: string }>) {
+
+    const TRACKING_ID = 'G-XFZH16DF04';
+    ReactGA.initialize(TRACKING_ID);
+
     return (
         <>
             <Head title="Welcome" />
