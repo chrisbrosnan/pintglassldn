@@ -26,7 +26,7 @@ function add_custom_post_types(){
                 'slug' => 'venues'
             ],
             'supports' => [
-                'title', 'editor', 'thumbnail'
+                'title', 'editor', 'thumbnail', 'comments'
             ],
             'show_ui' => true,
             'show_in_graphql' => true,
@@ -45,7 +45,7 @@ function add_custom_post_types(){
                 'slug' => 'beverages'
             ],
             'supports' => [
-                'title', 'editor', 'thumbnail'
+                'title', 'editor', 'thumbnail', 'comments'
             ],
             'show_ui' => true,
             'show_in_graphql' => true,
