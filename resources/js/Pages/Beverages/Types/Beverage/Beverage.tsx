@@ -139,10 +139,6 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
                                                 <td className="pl-4">{ beverage?.beverageFields.brewery }</td>
                                             </tr>
                                             <tr>
-                                                <td>First Brewed:</td>
-                                                <td className="pl-4">{ beverage?.beverageFields.firstBrewed }</td>
-                                            </tr>
-                                            <tr>
                                                 <td>Origin:</td>
                                                 <td className="pl-4">{ beverage?.beverageFields.origin }
                                                     <img src={ flagImg } alt={ beverage?.beverageFields.origin } className="ml-1 w-5 h-5 inline-block" />

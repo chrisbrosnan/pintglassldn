@@ -27,6 +27,7 @@ export default function Header({ auth, appName }: PageProps<{ appName: string }>
             <div className="flex lg:justify-center lg:col-start-2">
                 <Link href={route('welcome')} className="text-white font-black">
                     <h1 className="text-white font-black">{appName}</h1>
+                    <img src="pgldn-logo.png" alt="Pintglass LDN" className="w-12 h-12" />
                 </Link>
             </div>
             <nav className="-mx-3 flex flex-1 justify-end">
