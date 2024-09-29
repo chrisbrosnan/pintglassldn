@@ -145,7 +145,7 @@ export default function Beverage({ auth, appName, slug, type }: PageProps<{ appN
                                             <tr>
                                                 <td>Origin:</td>
                                                 <td className="pl-4">{ beverage?.beverageFields.origin }
-                                                    <img src={ flagImg } alt={ beverage?.beverageFields.origin } className="ml-1 w-4 h-4 inline-block" />
+                                                    <img src={ flagImg } alt={ beverage?.beverageFields.origin } className="ml-1 w-5 h-5 inline-block" />
                                                 </td>
                                             </tr>
                                             <tr>
