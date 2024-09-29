@@ -16,7 +16,7 @@ interface Beverage {
 
 export default function AllBeerReviews() {
     const wp_graph_ql_query = `query RecentBeverages {
-        allBeverage() {
+        allBeverage(first: 100) {
             nodes {
                 content
                 slug
